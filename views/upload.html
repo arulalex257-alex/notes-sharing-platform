@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Notes</title>
+    <link rel="stylesheet" href="/css/upload.css">
+</head>
+<body>
+
+<header>
+    <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 28px;color:black">📚 Notes Sharing Platform</h2>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/notes.html">Dashboard</a>
+        <a href="/upload.html">Upload</a>
+        <a href="/login.html">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="upload-box">
+
+        <h1>📤 Upload Notes</h1>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+
+           <input type="text" name="subject" placeholder="Subject Name" required>
+
+           <input type="text" name="semester" placeholder="Semester" required>
+
+           <textarea name="description" placeholder="Description"></textarea>
+           
+           <input type="file" name="notesFile" required>
+           
+           <button type="submit">Upload Notes</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

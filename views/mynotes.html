@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="/css/mynotes.css">
+</head>
+
+<body>
+
+<header>
+    <h2>📚 Notes Sharing Platform</h2>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/notes.html">Dashboard</a>
+        <a href="/upload.html">Upload</a>
+        <a href="/download">Download</a>
+        <a href="/mynotes">My Notes</a>
+    </nav>
+</header>
+
+
+<div class="container">
+
+    <h1>📚 My Uploaded Notes</h1>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Subject</th>
+                <th>Semester</th>
+                <th>Description</th>
+                <th>File</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+
+        <tbody id="notesTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+<script>
+
+fetch("/mynotes")
+.then(response => response.json())
+.then(notes => {
+
+    let table = document.getElementById("notesTable");
+
+    notes.forEach((note,index)=>{
+
+        table.innerHTML += `
+
+        <tr>
+
+            <td>${index+1}</td>
+
+            <td>${note.subject}</td>
+
+            <td>${note.semester}</td>
+
+            <td>${note.description}</td>
+
+            <td>
+                <a class="download"
+                href="/uploads/${note.filename}"
+                download>
+                Download
+                </a>
+            </td>
+
+            <td>
+                ${new Date(note.uploadDate).toLocaleDateString()}
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+})
+.catch(error=>{
+    console.log(error);
+});
+
+
+</script>
+
+
+</body>
+</html>

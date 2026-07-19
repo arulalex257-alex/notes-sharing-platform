@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Notes</title>
+    <link rel="stylesheet" href="/css/search.css">
+</head>
+<body>
+
+<header>
+    <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 28px;">📚 Notes Sharing Platform</h2>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/notes.html">Dashboard</a>
+        <a href="/upload.html">Upload</a>
+        <a href="/download">Download</a>
+        <a href="/mynotes">My Notes</a>
+        <a href="/login.html">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="search-box">
+
+        <h1>🔍 Search Notes</h1>
+
+        <form action="/search" method="GET">
+
+            <input
+                type="text"
+                name="subject"
+                placeholder="Enter Subject Name (Example: Java, Python, DBMS)"
+                required
+            >
+
+            <button type="submit">Search</button>
+
+        </form>
+
+    </div>
+
+    <div class="info-box">
+        <h3>📌 Search Tips</h3>
+
+        <ul>
+            <li>Search by Subject Name</li>
+            <li>Example: Cloud Architecture</li>
+            <li>Example: Web Essential</li>
+            <li>Example: Human Computer Interaction</li>
+            <li>Example: Full Stack Development</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer style="font-weight:bold; font-family:poppins;color:black; text-align:center;background-color:#ccc9c9 ">
+    <p>© 2026 Notes Sharing Platform | Made with 🎓</p>
+</footer>
+
+</body>
+</html>
