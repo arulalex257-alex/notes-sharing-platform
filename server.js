@@ -22,9 +22,9 @@ if (!fs.existsSync("uploads")) {
 app.use("/uploads", express.static("uploads"));
 
 // MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/notesDB")
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("✅ MongoDB Connected"))
-.catch(err => console.log(err));
+.catch(err => console.error(err));
 
 // Multer Storage
 const storage = multer.diskStorage({
